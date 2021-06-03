@@ -1,6 +1,9 @@
+import os
 from flask import Flask, render_template
 from flask import jsonify
 from flask import request
+from flask_cors import CORS
+from flask_pymongo import PyMongo
 import pymongo
 
 
@@ -18,6 +21,15 @@ db = client.Students
 
 
 app = Flask(__name__)
+CORS(app)
+
+app.config["DEBUG"] = True
+
+app.config["MONGO_URI"] = os.environ['MONGO_URI']
+
+mongo=PyMongo(app)
+math=mongo.db.math
+portuguese=mongo.db.portuguese
 
 @app.route("/", methods=['GET'])
 def main():
@@ -25,14 +37,14 @@ def main():
 
 @app.route("/math", methods=['GET'])
 def math():
-    student_data = db.math.find({},{'_id':0}) 
+    student_data = math.find({},{'_id':0}) 
     
     return jsonify(list(student_data)) 
 
 
 @app.route("/portuguese", methods=['GET'])
 def port():
-    student_data = db.portuguese.find({},{'_id':0}) 
+    student_data = portuguese.find({},{'_id':0}) 
     
     return jsonify(list(student_data)) 
 
