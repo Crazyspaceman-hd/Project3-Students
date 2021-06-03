@@ -19,17 +19,19 @@ db = client.Students
 
 app = Flask(__name__)
 
-
+@app.route("/", methods=['GET'])
+def main():
+    return render_template('index.html')
 
 @app.route("/math", methods=['GET'])
-def index():
+def math():
     student_data = db.math.find({},{'_id':0}) 
     
     return jsonify(list(student_data)) 
 
 
 @app.route("/portuguese", methods=['GET'])
-def index():
+def port():
     student_data = db.portuguese.find({},{'_id':0}) 
     
     return jsonify(list(student_data)) 
