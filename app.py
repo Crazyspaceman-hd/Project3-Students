@@ -1,8 +1,8 @@
 import os
-from flask import Flask, render_template, redirect, url_for, jsonify, request
-from flask_pymongo import PyMongo
+from flask import Flask, render_template, jsonify, request
 from flask_cors import CORS
-import updatedb
+from flask_pymongo import PyMongo
+import pymongo
 
 
 
@@ -11,7 +11,7 @@ import json
 
 
 app = Flask(__name__)
-CORS(app)
+cors= CORS(app)
 
 app.config["DEBUG"] = True
 
@@ -21,9 +21,16 @@ mongo=PyMongo(app)
 math=mongo.db.math
 portuguese=mongo.db.portuguese
 
+app.config['CORS_HEADERS'] = 'Content-Type'
+
 @app.route("/")
-def main():
-    return render_template("index.html")
+@cross_origin()
+def helloWorld():
+  return "Hello, cross-origin-world!"
+
+# @app.route("/")
+# def main():
+#     return render_template("index.html")
 
 @app.route("/math")
 def stu_math():
