@@ -1,10 +1,8 @@
 import os
-from flask import Flask, render_template
-from flask import jsonify
-from flask import request
-from flask_cors import CORS
+from flask import Flask, render_template, redirect, url_for, jsonify, request
 from flask_pymongo import PyMongo
-import pymongo
+from flask_cors import CORS
+import updatedb
 
 
 
@@ -25,10 +23,10 @@ portuguese=mongo.db.portuguese
 
 @app.route("/")
 def main():
-    return render_template('index.html')
+    return render_template("index.html")
 
 @app.route("/math")
-def math():
+def stu_math():
     student_data = math.find({},{'_id':0}) 
     
     return jsonify(list(student_data)) 
