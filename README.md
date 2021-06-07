@@ -79,7 +79,7 @@ For each subject, we isolated the 5 most positive and 5 most negative coefficien
 1. Previous Class Failures
 2. Reason - Other
 3. Free Time
-4. Weekly Alcohol Consumption
+4. Weekend Alcohol Consumption
 5. Mother's Job - Other
 
 These factors and others were explored further in Tableau
