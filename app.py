@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, jsonify
-
+from flask_cors import CORS
 from flask_pymongo import PyMongo
 import pymongo
 
@@ -11,7 +11,7 @@ import json
 
 
 app = Flask(__name__)
-
+CORS(app)
 
 app.config["DEBUG"] = True
 

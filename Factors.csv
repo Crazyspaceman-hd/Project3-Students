@@ -1,0 +1,21 @@
+Attribute,Impact,Subject
+Failures,-4.95E-02,Language
+Reason School Chosen (Other),-2.89E-02,Language
+Freetime,-2.34E-02,Language
+Weekend Alcohol Cons.,-1.52E-02,Language
+Mothers Job (Other),-1.39E-02,Language
+Travel Time,2.87E-02,Language
+Absences,2.38E-02,Language
+Gender (Female),2.12E-02,Language
+Guardian (Other),2.10E-02,Language
+Fathers Job(At Home),2.05E-02,Language
+Age,-7.57E-02,Math
+School(GP),-5.12E-02,Math
+Guardian(Other),-1.42E-02,Math
+Reason School Chosen(Close to Home),-1.37E-02,Math
+School Support(No),-1.35E-02,Math
+Absences,1.08E-01,Math
+Quality of Family Relationship,8.35E-02,Math
+Weekend Alchol Consumption,3.51E-02,Math
+Reason School Chosen (Reputation),3.23E-02,Math
+Extra-curricular Activities(No),3.10E-02,Math
