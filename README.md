@@ -114,27 +114,41 @@ Alcohol consumption, interestingly had no clear effect on overall grades. For ea
 
 One thing to note is that, in terms of raw numbers, far fewer students drank than not. But again, there seemed to be no discrnable impact on scores overall.
 
+![Alcohol](images/Alcohol.png)
+
 ### Nursery School
 
 For students attending GP, attending nursery school as children did have some postive impact on final test scores. Interestingly, this was not the case for MS students. More research would be needed to determine of this is simply a coincidence or if there is some explanation, possibly the quality of nusery schools in one region versus another. 
+
+![Nursery](images/Nursery.png)
 
 ### Reason
 
 Students at GP were much more likely to cite reputation as the reason for attending this particular secondary school. This seems to have had a particular impact on language students, though at both schools students scored highest on language tests if the reason for choosing that school was its reputation. In math for both school, performance was generally much lower than language, and also students' performance in relation to their reasons for choosing that school were more mixed. This may suggest that both swchools have a better reputation for their language courses than their math courses. 
 
+![Reason](images/Reason.png)
+
 ### Parents' Education
 
 Based on the trend lines, there is a slight increase in test scores among students' whos parents have a higher education. This trend is more pronounced at MS than GP, and in all cases parents' education helps more in math than in language classes. 
+
+![Parents](images/ParentsEd.png)
 
 ### Absences
 
 Absences was a metric that was somewhat counterintuitive. For math students, more absences generally lead to lower grades, though not in all cases (see the outliers that missed 20+ classes, yet attained the highest scores, but also a student who missed about the same amount but scores the lowest). For language students, the picture was more mixed, with low-absence students performing at the middle of the pack, moderate-absence students performing lower, but then the highest-absence students performing best. One thing that is not clear is the reason for these absences. It potentially could make a big difference if students were taking days off to sleep in versus taking days off to attend a academic conference, for example. 
 
+![Absences](images/Absences.png)
+
 ### Relationship Status
 
-Being in a relationship did have a moderately detrimental impact on average scores and slightly increased absence rates. Other metrics were relatively unaffected. More research would need to be conducted to determine of these factors  are correlated in any meaningful way or if they are just anomolous to this dataset
+Being in a relationship did have a moderately detrimental impact on average scores and slightly increased absence rates. Other metrics were relatively unaffected. More research would need to be conducted to determine of these factors  are correlated in any meaningful way or if they are just anomolous to this dataset.
+
+![Romantic](images/Romantic.png)
 
 ### Study Time
 
 Study time did have some impact on final grades, with studey time generally coinciding with better scores, especially on the high end. This relationship seems relatively clear in language students, but less so in math studetns. In math, study times were realtively cvonstant across scores, suggesting little impact except in the most extreme end where students devoted 10 or more hours a week to studying. That sain, in both subjects, the students who studied the most got the best grades. 
+
+![Study](images/StudyTime.png)
 
