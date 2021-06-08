@@ -1,6 +1,6 @@
 # Project3-Students
 
-For this project, we chose to run a regression analysis on a dataset containing secondary school data from Portugal. Once we found the factors the most influenced final grades, we drilled down on those factors in Tableau. We also attempted to create a Tableau web data connector (WDC) by loading the data through a mongoDB database to a Flask app and then through a WDC url (remains to be seen if this is successful).
+For this project, we chose to run a regression analysis on a dataset containing secondary school data from Portugal. Once we found the factors the most influenced final grades, we drilled down on those factors in Tableau. We also attempted to create a Tableau web data connector (WDC) by loading the data through a mongoDB database to a Flask app and then through a WDC url.
 
 ### The Data
 
@@ -42,7 +42,7 @@ For this project, we chose a data set from Kaggle containing demographic data an
 
 It is worth noting here that there are some cultural and social differences from the American education system in this data. For one, the drinking age in Portugal is 18, so alcohol consumption and relatively commonplace. Additionally, students are not limited by geographic district like in the US. The 'reason' category indicates which factors went into the students' and parents' decision-making when enrolling in a particular school.
 
-### Machine Learning (Linear Regression)
+### Machine Learning (Regression Analysis)
 
 The machine learning part of this project was two linear regressions (one for each subject) to find the most important factors influencing final test scores (G3). The regression created an equation with weighted coefficients for each factor, which were used to find relative weight of each in determining the final score. The reading regression can be found here: https://colab.research.google.com/drive/1hEBb9s6MEb7VH6WrPW3bSTyEFOt92SVH?usp=sharing and the math regression can be found here: https://colab.research.google.com/drive/1RWOVCz39bCL1MGd-EfV7sFCfLfUUMuEL?usp=sharing.
 
@@ -90,43 +90,51 @@ Before exploring the data in Tableau, we attempted to create a Web Data Connecto
 
 First, this required loading the data into a database to be delpoyed in a Flask App. We used a Jupyter Notebook to load each row as a MongDB collection in MongoCloud. The Flask app contained two routes (one for language, on for math) and was deployed to Heroku.
 
-After the data was available in JSON format in the deployed app, we bult a connctor in HTML/JavaScript. Most of this code was pre-written and can be found here: https://tableau.github.io/webdataconnector/docs/wdc_tutorial.html. Our team changed the column names and value types so it could be loaded into Tableau.
+After the data was available in JSON format in the deployed app, we built connctors in HTML/JavaScript, one url for language and one for math. Most of this code was pre-written and can be found here: https://tableau.github.io/webdataconnector/docs/wdc_tutorial.html. Our team changed the column names and value types so it could be loaded into Tableau.
 
-Note: We currently have an error that is a known issue by Tableau which is preventing the WDC from loading the data. 
+To load this data, run reading_wdc.html or math_wdc.html in your preferred live server. These files can be found in the wdc branch of this repository. In Tableau, choose Web Data Connector as your pload method. Then paste the live url into the box and click enter. When the page comes up in the small window, click the "Get Data" button. Tableau will load the blank columns first, then click Update to load in the data. 
 
 ### Tableau Drill Down
 
 From the Machine Learning phase, we identified several areas for futher exploration in no particular order: 
 
 * Alcohol Consumption
-* Failures
-* Gender
-* Absences
+* Nursery School
 * Reason
 * Parents' Education
-* Study Time
+* Absences
 * Relationship Status
-* Nursery School
-* Free Time
+* Study Time
 
 The following trends were found in relation to those factors:
 
-#### Alcohol Consumption
+### Alcohol Consumption
 
-#### Failures
+Alcohol consumption, interestingly had no clear effect on overall grades. For each school and each subject, scores varied seemingly independent of alcohol consumption. In some cases, moderate-to-heavy consumption on the weekdays had a negative impact, like at MS in language scores. But also at the same school there were high performers in math that drank as much or more. 
 
-#### Gender
+One thing to note is that, in terms of raw numbers, far fewer students drank than not. But again, there seemed to be no discrnable impact on scores overall.
 
-#### Absences
+### Nursery School
 
-#### Reason
+For students attending GP, attending nursery school as children did have some postive impact on final test scores. Interestingly, this was not the case for MS students. More research would be needed to determine of this is simply a coincidence or if there is some explanation, possibly the quality of nusery schools in one region versus another. 
 
-#### Parents' Education
+### Reason
 
-#### Study Time
+Students at GP were much more likely to cite reputation as the reason for attending this particular secondary school. This seems to have had a particular impact on language students, though at both schools students scored highest on language tests if the reason for choosing that school was its reputation. In math for both school, performance was generally much lower than language, and also students' performance in relation to their reasons for choosing that school were more mixed. This may suggest that both swchools have a better reputation for their language courses than their math courses. 
 
-#### Relationship Status
+### Parents' Education
 
-#### Nursery School
+Based on the trend lines, there is a slight increase in test scores among students' whos parents have a higher education. This trend is more pronounced at MS than GP, and in all cases parents' education helps more in math than in language classes. 
 
-#### Free Time
+### Absences
+
+Absences was a metric that was somewhat counterintuitive. For math students, more absences generally lead to lower grades, though not in all cases (see the outliers that missed 20+ classes, yet attained the highest scores, but also a student who missed about the same amount but scores the lowest). For language students, the picture was more mixed, with low-absence students performing at the middle of the pack, moderate-absence students performing lower, but then the highest-absence students performing best. One thing that is not clear is the reason for these absences. It potentially could make a big difference if students were taking days off to sleep in versus taking days off to attend a academic conference, for example. 
+
+### Relationship Status
+
+Being in a relationship did have a moderately detrimental impact on average scores and slightly increased absence rates. Other metrics were relatively unaffected. More research would need to be conducted to determine of these factors  are correlated in any meaningful way or if they are just anomolous to this dataset
+
+### Study Time
+
+Study time did have some impact on final grades, with studey time generally coinciding with better scores, especially on the high end. This relationship seems relatively clear in language students, but less so in math studetns. In math, study times were realtively cvonstant across scores, suggesting little impact except in the most extreme end where students devoted 10 or more hours a week to studying. That sain, in both subjects, the students who studied the most got the best grades. 
+
