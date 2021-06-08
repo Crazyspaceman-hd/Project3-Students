@@ -118,17 +118,23 @@
             dataType: tableau.dataTypeEnum.int
         }];
     
+        var tableSchema = {
+            id: "StudentData",
+            alias: "Math Scores",
+            columns: cols
+        };
+    
         schemaCallback([tableSchema]);
 
     };
 
     myConnector.getData = function (table, doneCallback) {
         $.getJSON("https://htp-proj3.herokuapp.com/math", function(resp) {
-        var feat = resp.features,
+        var feat = resp,
             tableData = [];
 
         // Iterate over the JSON object
-        for (var i = 0, len = 10; i < len; i++) {
+        for (var i = 0, len = feat.length; i < len; i++) {
             tableData.push({
                 "school": feat[i].school,
                 "sex": feat[i].sex,

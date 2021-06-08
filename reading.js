@@ -130,7 +130,7 @@
 
     myConnector.getData = function (table, doneCallback) {
         $.getJSON("https://htp-proj3.herokuapp.com/portuguese", function(resp) {
-        var feat = resp.features,
+        var feat = resp,
             tableData = [];
 
         // Iterate over the JSON object
