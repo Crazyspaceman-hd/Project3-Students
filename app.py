@@ -8,7 +8,6 @@ import pymongo
 from pymongo import MongoClient
 import json
 
-
 username = 'twig'
 password = 'twiggles'
 
